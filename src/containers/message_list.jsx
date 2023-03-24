@@ -18,7 +18,7 @@ class MessageList extends Component {
     let intervalId
     intervalId = setInterval(
       () => {
-        this.props.setMessages();
+        this.props.setMessages(this.props.selectedChannel);
       },
       1000
     );
@@ -53,8 +53,10 @@ class MessageList extends Component {
 };
 
 function mapStateToProps(state) {
+
   return {
-    messages: state.messages
+    messages: state.messages,
+    selectedChannel: state.selectedChannel
   };
 }
 

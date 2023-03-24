@@ -1,5 +1,5 @@
-export function setMessages() {
-  return fetch(`https://wagon-chat.herokuapp.com/general/messages`)
+export function setMessages(selectedChannel) {
+  return fetch(`https://wagon-chat.herokuapp.com/${selectedChannel}/messages`)
     .then(response => response.json())
     .then((data) => {
       return {
@@ -9,10 +9,9 @@ export function setMessages() {
     });
 }
 
-export function createMessage(content, author) {
+export function createMessage(content, author, channel) {
   const body = { "author": author, "content": content }
 
-  let channel = 'general'
 
   return fetch(`https://wagon-chat.herokuapp.com/${channel}/messages`, {
     method: 'POST',
