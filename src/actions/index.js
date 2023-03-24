@@ -28,3 +28,13 @@ export function createMessage(content, author) {
     }
   });
 }
+
+const channels = ['general', 'react', 'paris']
+
+export function setChannels() {
+  return {
+    type: 'SET_CHANNELS',
+    payload: channels
+  }
+
+}

@@ -11,17 +11,15 @@ import App from './components/app';
 import '../assets/stylesheets/application.scss';
 import postReducer from './reducers/post_reducer.js'
 import messagesReducer from './reducers/message_reducer.js'
+import channelsReducer from './reducers/channels_reducer.js'
 // State and reducers
 const reducers = combineReducers({
   messages: messagesReducer,
-  post: postReducer
+  post: postReducer,
+  channels: channelsReducer
 });
 
 const middlewares = applyMiddleware(logger, reduxPromise);
-
-// let initialState = {
-//   channel: "general"
-// }
 
 // render an instance of the component in the DOM
 ReactDOM.render(

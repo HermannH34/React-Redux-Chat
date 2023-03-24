@@ -1,6 +1,6 @@
 .message-list {
   border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 700px;
+  width: 900px;
   height: 400px;
   overflow-y: auto;
 }
@@ -53,5 +53,35 @@ input[type="text"] {
   font-size: 1em;
   cursor: pointer;
   font-family: Verdana;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.channels {
+  width: 400px;
+  background-color: rgb(245, 242, 242);
+  padding-left: 20px;
+}
+
+.title {
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.channels-list {
+  font-family: Verdana;
+  font-size: 1.1em;
+  color: grey;
+}
+
+.active {
+  font-family: Verdana;
+  font-size: 1.1em;
   font-weight: bold;
 }
