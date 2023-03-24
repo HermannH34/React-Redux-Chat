@@ -78,10 +78,9 @@ input[type="text"] {
   font-family: Verdana;
   font-size: 1.1em;
   color: grey;
+  cursor: pointer;
 }
 
-.active {
-  font-family: Verdana;
-  font-size: 1.1em;
+.channels-list.active {
   font-weight: bold;
 }

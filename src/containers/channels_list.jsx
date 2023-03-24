@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setChannels } from '../actions';
+import Channel from '../containers/channel'
 
 class ChannelsList extends Component {
+
   componentWillMount() {
     this.props.setChannels();
   }
@@ -12,12 +14,8 @@ class ChannelsList extends Component {
 
     return (
       <div>
-        {this.props.channels.map((channel, index) => {
-          if (index === 0) {
-            return <p className='active'>#{channel}</p>;
-          } else {
-            return <p className='channels-list'>#{channel}</p>;
-          }
+        {this.props.channels.map((channel, i) => {
+          return <Channel key={i} channel={channel} />
         })}
       </div>
     );
@@ -27,16 +25,21 @@ class ChannelsList extends Component {
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels
+    channels: state.channels,
+    selectedChannel: state.selectedChannel
   };
 }
+
+import { selectChannel } from '../actions'
 
 function mapDispatchToProps(dispatch) {
 
   return bindActionCreators(
-    { setChannels: setChannels },
+    { setChannels: setChannels, selectChannel: selectChannel },
     dispatch
   );
+
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChannelsList);
