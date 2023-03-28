@@ -3,6 +3,18 @@
   width: 900px;
   height: 400px;
   overflow-y: auto;
+  padding-right: 20px;
+}
+
+.channel-title {
+  text-indent: 22px;
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 1.2em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .author {
@@ -33,19 +45,24 @@
 
 .form {
   width: 700px;
-  height: 300px
+  height: 192px;
+  margin-left: 27px;
+  padding-top: 30px;
 }
 
 form {
   padding: 10px;
   margin: 15px;
+  width: 900px;
 }
 
 input[type="text"] {
-  width: 540px;
+  width: 720px;
+  height: 35px;
 }
 
 .button {
+  height: 35px;
   background-color: red;
   color: white;
   padding: 4px 20px;
@@ -72,6 +89,7 @@ input[type="text"] {
   font-family: Verdana;
   font-size: 1.5em;
   margin-bottom: 30px;
+  padding-top: 20px;
 }
 
 .channels-list {
@@ -83,4 +101,14 @@ input[type="text"] {
 
 .channels-list.active {
   font-weight: bold;
+}
+
+.first {
+  width: 70px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  background-color: rgb(195, 188, 188);
 }

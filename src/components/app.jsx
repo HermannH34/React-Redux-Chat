@@ -6,6 +6,7 @@ import ChannelsList from '../containers/channels_list';
 const App = () => {
   return (
     <div className="container">
+      <div className='first'></div>
       <div className='channels'>
         <p className="title">Redux Chat</p>
         <ChannelsList />

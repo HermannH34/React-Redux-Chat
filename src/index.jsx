@@ -13,7 +13,7 @@ import postReducer from './reducers/post_reducer.js'
 import messagesReducer from './reducers/message_reducer.js'
 import channelsReducer from './reducers/channels_reducer.js'
 import selectedChannelReducer from './reducers/selected_channel_reducer.js'
-// State and reducers
+
 const reducers = combineReducers({
   messages: messagesReducer,
   post: postReducer,
@@ -21,15 +21,10 @@ const reducers = combineReducers({
   selectedChannel: selectedChannelReducer
 });
 
-const preloadedState = {
-  selectedChannel: null
-};
-
 const middlewares = applyMiddleware(logger, reduxPromise);
 
-// render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, preloadedState, middlewares)}>
+  <Provider store={createStore(reducers, {}, middlewares)}>
     <App />
   </Provider>,
   document.getElementById('root')

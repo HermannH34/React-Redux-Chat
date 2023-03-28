@@ -19,7 +19,6 @@ class Channel extends Component {
       classes += ' active';
     }
 
-
     return (
       <div>
         <p className={classes} onClick={this.handleClick}>#{this.props.channel}</p>
