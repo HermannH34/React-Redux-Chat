@@ -38,12 +38,3 @@ export function setChannels() {
   }
 
 }
-
-export function selectChannel(channel) {
-
-  return {
-    type: 'SELECT_CHANNEL',
-    payload: channel
-  }
-
-}

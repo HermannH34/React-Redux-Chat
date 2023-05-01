@@ -12,20 +12,26 @@ import '../assets/stylesheets/application.scss';
 import postReducer from './reducers/post_reducer.js'
 import messagesReducer from './reducers/message_reducer.js'
 import channelsReducer from './reducers/channels_reducer.js'
-import selectedChannelReducer from './reducers/selected_channel_reducer.js'
+import { BrowserRouter as Router, Route, Redirect, Switch }
+  from 'react-router-dom';
+import { createBrowserHistory as history } from 'history';
 
 const reducers = combineReducers({
   messages: messagesReducer,
   post: postReducer,
   channels: channelsReducer,
-  selectedChannel: selectedChannelReducer
 });
 
 const middlewares = applyMiddleware(logger, reduxPromise);
 
 ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
-    <App />
+    <Router history={history}>
+      <Switch>
+        <Route path="/:channel" component={App} />
+        <Redirect from="/" to="/general" />
+      </Switch>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
