@@ -1,3 +1,8 @@
+body {
+  height: 100%;
+}
+
+
 .message-list {
   border: 1px solid rgba(0, 0, 0, 0.1);
   width: 900px;
@@ -47,7 +52,7 @@
   width: 700px;
   height: 192px;
   margin-left: 27px;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 form {
@@ -76,12 +81,14 @@ input[type="text"] {
 .container {
   display: flex;
   flex-direction: row;
+  min-height: 100%;
 }
 
 .channels {
   width: 400px;
   background-color: rgb(245, 242, 242);
   padding-left: 20px;
+  margin-bottom: 0px;
 }
 
 .title {
