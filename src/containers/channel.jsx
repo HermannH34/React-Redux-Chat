@@ -2,26 +2,28 @@ import React, { Component } from 'react';
 import { selectChannel } from '../actions/index.js'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 class Channel extends Component {
-  handleClick = () => {
 
-    this.props.selectChannel(this.props.channel);
-  }
   render() {
     let classes = 'channels-list'
-    if (this.props.channel === this.props.firstChannel && !this.props.selectedChannel) {
+    if (this.props.channel === this.props.firstChannel && !this.props.channelFromParams) {
       classes += ' active';
     }
-    else if (this.props.channel == this.props.selectedChannel) {
+    else if (this.props.channel == this.props.channelFromParams) {
 
       classes += ' active';
     }
 
     return (
       <div>
-        <p className={classes} onClick={this.handleClick}>#{this.props.channel}</p>
+        <Link to={`/${this.props.channel}`}>
+          <p className={classes}>
+            #{this.props.channel}
+          </p>
+        </Link>
       </div>
     );
   }
@@ -29,7 +31,6 @@ class Channel extends Component {
 
 function mapStateToProps(state) {
   return {
-    selectedChannel: state.selectedChannel,
     firstChannel: state.channels[0]
   };
 }

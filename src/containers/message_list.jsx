@@ -18,7 +18,7 @@ class MessageList extends Component {
     let intervalId
     intervalId = setInterval(
       () => {
-        this.props.setMessages(this.props.selectedChannel);
+        this.props.setMessages(this.props.channelFromParams);
       },
       1000
     );
@@ -32,7 +32,7 @@ class MessageList extends Component {
 
   componentWillUnmount() {
 
-    clearInterval(intervalMessage)
+    clearInterval(this.intervalId)
   }
 
   renderList() {
@@ -47,7 +47,7 @@ class MessageList extends Component {
     return (
       <div className="message-list" ref={node => this.myRef = node}>
         <div className="channel-title">
-          {this.props.selectedChannel ? <p>Channel #{this.props.selectedChannel}</p> : <p>Channel #general</p>}
+          {this.props.channelFromParams ? <p>Channel #{this.props.channelFromParams}</p> : <p>Channel #general</p>}
         </div>
         {this.renderList()}
       </ div>
@@ -59,7 +59,6 @@ function mapStateToProps(state) {
 
   return {
     messages: state.messages,
-    selectedChannel: state.selectedChannel
   };
 }
 

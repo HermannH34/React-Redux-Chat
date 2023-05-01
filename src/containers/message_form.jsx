@@ -15,7 +15,7 @@ class MessageForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let author = prompt("What's your username ?")
-    this.props.createMessage(this.state.value, author, this.props.selectedChannel);
+    this.props.createMessage(this.state.value, author, this.props.channelFromParams);
     this.setState({ value: "" });
   }
 
@@ -43,10 +43,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    selectedChannel: state.selectedChannel
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);
+export default connect(mapDispatchToProps)(MessageForm);

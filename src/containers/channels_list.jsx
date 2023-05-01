@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setChannels } from '../actions';
 import Channel from '../containers/channel'
+import { selectChannel } from '../actions'
 
 class ChannelsList extends Component {
 
@@ -26,11 +27,8 @@ class ChannelsList extends Component {
 function mapStateToProps(state) {
   return {
     channels: state.channels,
-    selectedChannel: state.selectedChannel
   };
 }
-
-import { selectChannel } from '../actions'
 
 function mapDispatchToProps(dispatch) {
 
